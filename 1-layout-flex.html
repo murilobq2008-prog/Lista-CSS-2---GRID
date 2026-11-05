@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Flexbox</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 55vw;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topo {
+            height: 18%;
+            background-color: #252525;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 20px;
+        }
+
+        .bolinha {
+            width: 18px;
+            height: 18px;
+            background-color: #00b8b0;
+            border-radius: 50%;
+        }
+
+        .principal {
+            display: flex;
+            flex: 1;
+        }
+
+        .navegacao {
+            width: 23%;
+            background-color: #ff862e;
+            display: flex;
+            justify-content: center;
+            padding-top: 15px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .conteudo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+        }
+
+        header {
+            height: 16%;
+            background-color: #00a9d5;
+            padding-top: 15px;
+        }
+
+        main {
+            flex: 1;
+            background-color: #62509f;
+            padding-top: 15px;
+        }
+
+        footer {
+            height: 16%;
+            background-color: #0796b9;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="topo">
+            <div class="bolinha"></div>
+            <div class="bolinha"></div>
+            <div class="bolinha"></div>
+        </div>
+
+        <div class="principal">
+
+            <nav class="navegacao">
+                NAVEGAÇÃO
+            </nav>
+
+            <div class="conteudo">
+
+                <header>
+                    CABEÇALHO
+                </header>
+
+                <main>
+                    CONTEÚDO
+                </main>
+
+                <footer>
+                    RODAPÉ
+                </footer>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

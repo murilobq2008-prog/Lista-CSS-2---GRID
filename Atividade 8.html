@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Grid Responsivo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eeeeee;
+        }
+
+        .container {
+            width: 300px;
+            height: 180px;
+            display: grid;
+            gap: 3px;
+
+            grid-template-columns: 16px 2fr 1fr 1.5fr;
+            grid-template-rows: repeat(3, 1fr);
+
+            grid-template-areas:
+                "bolinhas azul azul amarelo"
+                "bolinhas rosa verde-claro amarelo"
+                "bolinhas salmao salmao verde";
+        }
+
+        .item {
+            border: 1px solid white;
+        }
+
+        .bolinhas {
+            grid-area: bolinhas;
+            background-color: #eeeeee;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .bola {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background-color: #f5b72e;
+        }
+
+        .bola:nth-child(1) {
+            background-color: #f19b75;
+        }
+
+        .bola:nth-child(2) {
+            background-color: #b9c58a;
+        }
+
+        .bola:nth-child(3) {
+            background-color: #d8b5b5;
+        }
+
+        .bola:nth-child(4) {
+            background-color: #f5b72e;
+        }
+
+        .azul {
+            grid-area: azul;
+            background-color: #b4c9df;
+        }
+
+        .rosa {
+            grid-area: rosa;
+            background-color: #d8b0b0;
+        }
+
+        .verde-claro {
+            grid-area: verde-claro;
+            background-color: #c9dfdf;
+        }
+
+        .salmao {
+            grid-area: salmao;
+            background-color: #f2b5a5;
+        }
+
+        .amarelo {
+            grid-area: amarelo;
+            background-color: #f5b52f;
+        }
+
+        .verde {
+            grid-area: verde;
+            background-color: #b6c783;
+        }
+
+        @media screen and (max-width: 500px) {
+
+            .container {
+                width: 90vw;
+                height: 150px;
+                gap: 2px;
+
+                grid-template-columns: 16px 2fr 1fr 1.5fr;
+            }
+
+            .bola {
+                width: 8px;
+                height: 8px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="item bolinhas">
+            <div class="bola"></div>
+            <div class="bola"></div>
+            <div class="bola"></div>
+            <div class="bola"></div>
+        </div>
+
+        <div class="item azul"></div>
+        <div class="item rosa"></div>
+        <div class="item verde-claro"></div>
+        <div class="item salmao"></div>
+        <div class="item amarelo"></div>
+        <div class="item verde"></div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Adaptativo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 500px;
+            height: 400px;
+            display: grid;
+            grid-template-columns: 1fr 5fr 1fr;
+            grid-template-rows: 35px 35px 1fr 40px 30px;
+            gap: 5px;
+
+            grid-template-areas:
+                "header header header"
+                "banner banner banner"
+                "left main right"
+                "left low right"
+                "footer footer footer";
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #f0b900;
+        }
+
+        .banner {
+            grid-area: banner;
+            background-color: #d83c35;
+        }
+
+        .left {
+            grid-area: left;
+            background-color: #159b54;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #4384e8;
+        }
+
+        .right {
+            grid-area: right;
+            background-color: #f0b900;
+        }
+
+        .low {
+            grid-area: low;
+            background-color: #159b54;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #4384e8;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            .container {
+                width: 90%;
+                height: 600px;
+
+                grid-template-columns: 1fr;
+                grid-template-rows: 35px 35px 35px 1fr 35px 35px 35px;
+
+                grid-template-areas:
+                    "header"
+                    "banner"
+                    "left"
+                    "main"
+                    "right"
+                    "low"
+                    "footer";
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="item header">Header</div>
+
+        <div class="item banner">Banner</div>
+
+        <div class="item left">Left Aside</div>
+
+        <div class="item main">Main Content</div>
+
+        <div class="item right">Right Aside</div>
+
+        <div class="item low">Low Content</div>
+
+        <div class="item footer">Footer</div>
+
+    </div>
+
+</body>
+</html>

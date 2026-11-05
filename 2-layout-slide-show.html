@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show Flexbox</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .container {
+            width: 80%;
+            height: 300px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .imagem {
+            flex: 1;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            transition: flex 0.6s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .imagem:hover {
+            flex: 5;
+        }
+
+        .imagem span {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.4s;
+            text-shadow: 1px 1px 4px black;
+        }
+
+        .imagem:hover span {
+            opacity: 1;
+        }
+
+        .img1 {
+            background-image: url("https://images.unsplash.com/photo-1448375240586-882707db888b");
+        }
+
+        .img2 {
+            background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+        }
+
+        .img3 {
+            background-image: url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e");
+        }
+
+        .img4 {
+            background-image: url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8");
+        }
+
+        .img5 {
+            background-image: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="imagem img1">
+            <span>Floresta</span>
+        </div>
+
+        <div class="imagem img2">
+            <span>Natureza</span>
+        </div>
+
+        <div class="imagem img3">
+            <span>Montanhas</span>
+        </div>
+
+        <div class="imagem img4">
+            <span>Paisagem</span>
+        </div>
+
+        <div class="imagem img5">
+            <span>Lago</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
